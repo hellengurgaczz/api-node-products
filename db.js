@@ -1,8 +1,13 @@
-const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'sistema_pessoas',
-  password: 'postgres',
-  port: 5432,
-})
+const Sequelize = require("sequelize");
+const database = new Sequelize("Products", "postgres", "261315@globo", {
+  host: "localhost",
+  dialect: "postgres"
+});
+
+database.authenticate().then(() => {
+  console.log('Conexão com banco de dados estabelecida');
+}).catch((error) => {
+  console.log(error)
+});
+
+module.exports = database;
