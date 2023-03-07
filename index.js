@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const server = express();
 const bodyParser = require('body-parser')
-const repository = require('./products/repositories/productRepository');
+const repository = require('./src/products/repositories/productRepository');
 
 server.listen(process.env.PORT), () => {
     console.log(`Servidor rodando na porta de conexão ${process.env.PORT}.`)
