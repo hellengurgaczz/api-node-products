@@ -17,7 +17,7 @@ server.use(
 )
 
 // Routes
-server.get('/products', repository.getProducts)
+server.get('/', repository.getProducts)
 server.get('/products/:id', repository.getProductById)
 server.post('/products', repository.createProduct)
 server.put('/products/:id', repository.updateProduct)
