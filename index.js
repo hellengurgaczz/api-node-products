@@ -17,7 +17,10 @@ server.use(
 )
 
 // Routes
-server.get('/', repository.getProducts)
+server.get("/", (req, res) => {
+  res.send("Hi Docker!!!");
+});
+server.get('/products', repository.getProducts)
 server.get('/products/:id', repository.getProductById)
 server.post('/products', repository.createProduct)
 server.put('/products/:id', repository.updateProduct)
